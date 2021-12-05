@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<head>
+    <style>
+
+    
+    </style>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+</head>
+    <body>
+            <h1>Annual Maintainence Contract</h1>
+        <!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add AMC</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Annual Maintainence Contract</h4>
+      </div>
+      <div class="modal-body">
+            <div class="container">
+       
+                    <form class="form-group">
+                           <div class="col-xs-4">
+                               <div class="form-group">
+                                   <label>Quotation No</label>
+                    <input type="text"  class= "form-control" name="Quotation_no" id="Quotation_no" placeholder="Enter Quotation Number">
+                               </div>
+                               <div class="form-group">
+                                    <label>Customer Name</label>
+                                    <input type="text"  class= "form-control" name="Customer" id="Customer" placeholder="Enter Customer Name">
+                                </div>
+                                <div class="form-group">
+                                        <label>AMC % per price</label>
+                                        <input type="text"  class= "form-control" name="AMC" id="AMC" placeholder="Enter Amc % per unit price">
+                                 </div>
+                                    <div class="form-group">
+                                            <label>Invoice Date</label>
+                                            <input type="date"  class= "form-control" name="idate" id="idate" placeholder="Enter Invoice Date">
+                                        </div>
+                                   
+                                    <div class="form-group">
+                                            <label> Select Product</label>
+                                        <select class="form-control">
+                                            <option value=""></option>
+                                        </select>   
+                                    </div>
+                                    <div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Quantity">
+                                        </div>
+                                        <div class="form-group">
+                                                <label>Unit Price</label>
+                                                <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Unit Price">
+                                            </div>
+                                            <div class="form-group">
+                                                    <label> Tax Type</label>
+                                                <select class="form-control">
+                                                    <option value="SalesTax">Sales Tax</option>
+                                                </select>   
+                                            </div>
+                                            <div class="form-group">
+                                                   
+                                                    <label>Tax %</label>
+                                                    <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Tax %">
+                                                    <div class="input-group-append">
+                                                            <button class="btn btn-primary" type="button">Add Tax</button>  
+                                                        </div>   
+                                                </div>
+                                                <div class="form-group">
+                                                        <label>Total Amount</label>
+                                                        <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Total Amount">
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <label>Total Tax</label>
+                                                            <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Total Tax">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <label>Net Amount</label>
+                                                                <input type="text"  class= "form-control" name="idate" id="idate" placeholder="Enter Net Amount">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label>Quotation Date</label>
+                                                                    <input type="date"  class= "form-control" name="idate" id="idate" placeholder="Enter Net Amount">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label>Quotation Validity</label>
+                                                                        <input type="date"  class= "form-control" name="idate" id="idate" placeholder="Enter Net Amount">
+                                                                    </div>
+                    <input type="submit" class="btn btn-success">
+                     </div>             
+                     </div>
+                    </form>
+                     </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <hr>
+ <h1>AMC Details</h1>
+ <div class="container">
+        <table  class="table table-bordered table-striped table-hover" id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th class="th-sm">Product
+                    </th>
+                    <th class="th-sm">Price
+                    </th>
+                    <th class="th-sm">Quantity
+                    </th>
+                    <th class="th-sm">AMC
+                    </th>
+                    <th class="th-sm">AMC/QTY
+                    </th>
+                    <th class="th-sm">Total
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>$320,800</td>
+                  </tr>
+                  
+                </tbody>
+                
+              </table>
+
+ </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function () {
+$('#dtBasicExample').DataTable();
+$('.dataTables_length').addClass('bs-select');
+});
+</script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+</body>
+</html>
